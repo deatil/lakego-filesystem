@@ -437,6 +437,16 @@ func Move(path string, target string) error {
     return defaultFilesystem.Move(path, target)
 }
 
+// 重命名
+func (this *Filesystem) Rename(path string, target string) error {
+    return os.Rename(path, target)
+}
+
+// 重命名
+func Rename(path string, target string) error {
+    return defaultFilesystem.Rename(path, target)
+}
+
 // 文件复制
 func (this *Filesystem) Copy(path string, target string) error {
     srcFile, err := os.Open(path)
